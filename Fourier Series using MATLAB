@@ -1,0 +1,459 @@
+% Plot the series: x(t)=0.5-(1 /pi)*sum[n=1==>inf.](sin(2*n*pi*t)/n)
+
+
+subplot(3,2,1);
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=1: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p1=plot(t,x,'linewidth',2);
+
+title('The Fourier series of the waveform')
+
+
+lgd=legend([p1],{'n=1'},'Location','northeast','NumColumns',1);
+
+title(lgd,'# of terms')
+
+
+subplot(3,2,2);
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=1: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p1=plot(t,x,'linewidth',2);
+
+title('The Fourier series of the waveform, n=2')
+
+
+hold on
+
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=2: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p2=plot(t,x,'linewidth',2);
+
+
+hold off
+
+
+lgd=legend([p1 p2],{'n=1','n=2'},'Location','northeast','NumColumns',1);
+
+title(lgd,'# of terms')
+
+
+subplot(3,2,3);
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=1: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p1=plot(t,x,'linewidth',2);
+
+title('The Fourier series of the waveform, n=3')
+
+
+hold on
+
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=3: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p3=plot(t,x,'linewidth',2);
+
+
+hold off
+
+
+ 
+
+lgd=legend([p1 p3],{'n=1','n=3'},'Location','northeast','NumColumns',1);
+
+title(lgd,'# of terms')
+
+
+subplot(3,2,4);
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=1: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p1=plot(t,x,'linewidth',2);
+
+title('The Fourier series of the waveform, n=4')
+
+
+hold on
+
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=4: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p4=plot(t,x,'linewidth',2);
+
+
+hold off
+
+
+ 
+
+lgd=legend([p1 p4],{'n=1','n=4'},'Location','northeast','NumColumns',1);
+
+title(lgd,'# of terms')
+
+
+subplot(3,2,5);
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=1: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p1=plot(t,x,'linewidth',2);
+
+title('The Fourier series of the waveform, n=5')
+
+
+hold on
+
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=5: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p5=plot(t,x,'linewidth',2);
+
+
+hold off
+
+
+ 
+
+lgd=legend([p1 p5],{'n=1','n=5'},'Location','northeast','NumColumns',1);
+
+title(lgd,'# of terms')
+
+
+subplot(3,2,6);
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=1: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p1=plot(t,x,'linewidth',2);
+
+title('The Fourier series of the waveform, n=6')
+
+
+hold on
+
+
+to=5; %interval range +/- to
+
+tPts=500; % # of points in time
+
+t=linspace(-to, to, tPts);
+
+nPts=1000; % # of terms in each sum
+
+DC=0.5; % dc component
+
+const=8/((pi)^2); % constant multiplying the sum
+
+AC=zeros(1, tPts); % AC component
+
+for k=1: tPts
+
+sum=0;
+
+for n=6: nPts
+
+sum=sum+(cos((n*pi*t(k))/2))/n^2-(cos((n*pi*t(k))/2))*(cos((n*pi)/2))/n^2;
+
+end
+
+AC(k)=sum;
+
+end
+
+x=DC+const*AC;
+
+p6=plot(t,x,'linewidth',2);
+
+
+hold off
+
+
+ 
+
+lgd=legend([p1 p6],{'n=1','n=6'},'Location','northeast','NumColumns',1);
+
+title(lgd,'# of terms')
+
+
+grid on;

@@ -1,0 +1,167 @@
+while (repeat == 'y' || repeat == 'Y')
+num = 5;
+digit = zeros (1,3);
+
+for k = 1:num
+    A{k} = input ('Enter a color: ', 's');
+    color = lower(A);
+    if k <= 3
+        if strcmp (color{k}, 'black')
+            digit (k) = 0;
+        elseif strcmp (color{k}, 'brown')
+            digit (k) = 1;
+        elseif strcmp (color{k}, 'red')
+            digit (k) = 2;
+        elseif strcmp (color{k}, 'orange')
+            digit (k) = 3;
+        elseif strcmp (color{k}, 'yellow')
+            digit (k) = 4;
+        elseif strcmp (color{k}, 'green')
+            digit (k) = 5;
+        elseif strcmp (color{k}, 'blue')
+            digit (k) = 6;
+        elseif strcmp (color{k}, 'violet')
+            digit (k) = 7;
+        elseif strcmp (color{k}, 'grey')
+            digit (k) = 8;
+        elseif strcmp (color {k}, 'white')
+            digit (k) = 9;
+        else
+            A{k} = input('Error: Enter a valid color(black, brown, red, orange, yellow, green, blue, violet, grey, or white): ','s');
+            color = lower(A);
+            if strcmp (color{k}, 'black')
+            digit (k) = 0;
+        elseif strcmp (color{k}, 'brown')
+            digit (k) = 1;
+        elseif strcmp (color{k}, 'red')
+            digit (k) = 2;
+        elseif strcmp (color{k}, 'orange')
+            digit (k) = 3;
+        elseif strcmp (color{k}, 'yellow')
+            digit (k) = 4;
+        elseif strcmp (color{k}, 'green')
+            digit (k) = 5;
+        elseif strcmp (color{k}, 'blue')
+            digit (k) = 6;
+        elseif strcmp (color{k}, 'violet')
+            digit (k) = 7;
+        elseif strcmp (color{k}, 'grey')
+            digit (k) = 8;
+        elseif strcmp (color {k}, 'white')
+            digit (k) = 9;
+            else
+            end
+        end
+    end
+    if k == 4
+        if strcmp(color{k},'black')
+            multiplier = 1;
+        elseif strcmp(color{k},'brown')
+            multiplier = 10^1;
+        elseif strcmp(color{k},'red')
+            multiplier = 10^2;
+        elseif strcmp(color{k},'orange')
+            multiplier = 10^3;
+        elseif strcmp(color{k},'yellow')
+            multiplier = 10^4;
+        elseif strcmp(color{k},'green')
+            multiplier = 10^5;
+        elseif strcmp(color{k},'blue')
+            multiplier = 10^6;
+        elseif strcmp(color{k},'violet')
+            multiplier = 10^7;
+        elseif strcmp(color{k},'grey')
+            multiplier = 10^8;
+        elseif strcmp(color{k},'white')
+            multiplier = 10^9;
+        elseif strcmp(color{k}, 'gold')
+            multiplier = 10^(-1);
+        elseif strcmp(color{k}, 'silver')
+            multiplier = 10^(-2);
+        else
+            A{k} = input('Error: Enter a valid color(black, brown, red, orange, yellow, green, blue, violet, grey, white, gold, or silver): ','s');
+            color = lower(A);
+            if strcmp(color{k},'black')
+                multiplier = 1;
+            elseif strcmp(color{k},'brown')
+                multiplier = 10^1;
+            elseif strcmp(color{k},'red')
+                multiplier = 10^2;
+            elseif strcmp(color{k},'orange')
+                multiplier = 10^3;
+            elseif strcmp(color{k},'yellow')
+                multiplier = 10^4; 
+            elseif strcmp(color{k},'green')
+                multiplier = 10^5; 
+            elseif strcmp(color{k},'blue')
+                multiplier = 10^6; 
+            elseif strcmp(color{k},'violet')
+                multiplier = 10^7; 
+            elseif strcmp(color{k},'grey')
+                multiplier = 10^8;
+            elseif strcmp(color{k},'white')
+                multiplier = 10^9;
+            elseif strcmp(color{k}, 'gold')
+                multiplier = 10^(-1);
+            elseif strcmp(color{k}, 'silver')
+                multiplier = 10^(-2);
+            end
+        end
+    end
+    if k == 5 
+        if strcmp (color{k},'brown')
+            tolerance = '1%';
+        elseif strcmp(color{k},'red')
+            tolerance = '2%';
+        elseif strcmp(color{k},'green')
+            tolerance = '0.50%';
+        elseif strcmp(color{k},'blue')
+            tolerance = '0.25%';
+        elseif strcmp(color{k},'violet')
+            tolerance = '0.10%';
+        elseif strcmp(color{k},'grey')
+            tolerance = '0.05%';
+        elseif strcmp(color{k}, 'gold')
+            tolerance = '5%';
+        elseif strcmp(color{k}, 'silver')
+            tolerance = '10%';
+        else 
+            A{k} = input('Error: Enter a valid color(brown, red, green, blue, violet, grey, gold, or silver): ','s');
+            color = lower (A);
+            if strcmp(color{k},'brown')
+                tolerance = '1%';
+            elseif strcmp(color{k},'red')
+                tolerance = '2%';
+            elseif strcmp(color{k},'green')
+                tolerance = '0.50%';
+            elseif strcmp(color{k},'blue')
+                tolerance = '0.25%';
+            elseif strcmp(color{k},'violet')
+                tolerance = '0.10%';
+            elseif strcmp(color{k},'grey')
+                tolerance = '0.05%';
+            elseif strcmp(color{k}, 'gold')
+                tolerance = '5%';
+            elseif strcmp(color{k}, 'silver')
+                tolerance = '10%';
+            end
+        end
+    end
+end
+R = (100*digit(1) + 10*digit(2) + digit(3))*multiplier ; 
+if (0<=R) && (R<1000) 
+    R1 = R;
+    disp(['Resistor value: ' num2str(R1) ' Ohms' ' +/- ' tolerance ])
+elseif (1000 <= R) && (R < 10^6)
+    R1 = R/1000;
+    disp(['Resistor value: ' num2str(R1) ' Kilo-Ohms' ' +/- ' tolerance ])
+elseif (10^6 <= R) && (R < 10^9)
+    R1 = R/(10^6);
+    disp(['Resistor value: ' num2str(R1) ' Mega-Ohms' ' +/- ' tolerance ])
+elseif 10^9 <= R
+    R1 = R/(10^9);
+    disp(['Resistor value: ' num2str(R1) ' Giga-Ohms' ' +/- ' tolerance ])
+end
+repeat=input('Do you want to continue? (y/Y continues; any other quits) ', 's');
+disp(' ');
+end

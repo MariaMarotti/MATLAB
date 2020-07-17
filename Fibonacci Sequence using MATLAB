@@ -1,0 +1,40 @@
+x='y';
+
+while (x=='y' || x=='Y')
+    n = input ('Enter value greater than 2, this is the amount of terms displayed for your sequence: ');
+     a=0;
+     b=1;
+     disp(num2str(a))
+     disp(num2str(b))
+      
+ for m=1:n-2
+    c=a+b;
+    disp(num2str(c))
+    a=b;
+    b=c;
+ end
+
+ num2=input ('Enter value between 2 and 15 to find number of terms to obtain PHI number: ');
+ a=0;
+ b=1;
+c=a+b;
+ a=b;
+ b=c;
+R=c/a;
+
+PHI=(1+sqrt(5))/2;
+n=2;
+
+ while ((abs(PHI-R))>10^-num2)
+     c=a+b;
+     a=b;
+     b=c;
+     R=c/a;
+     n=n+1;
+     
+ end
+ disp( num2str(n))
+ 
+x=input('Press y/Y to continue, or any other key to exit: ','s');
+disp (' ');
+end

@@ -1,0 +1,65 @@
+x='y';
+
+while (x=='y' || x=='Y')
+%while loop so user does not have to run code again.
+n = input ('Number of unknowns between 2 and 5: ');
+A = [n,n];
+%n is either 3 or 4, and matrix A has size n picked by user.
+for b = 1:n
+    for c = 1:n
+        coeff = input('Enter the coefficients: ');
+        A(b,c) = coeff;
+        
+    end
+end
+
+%For loops allow user to input coefficients of 3x3 or 4x4 matrix through 
+%coeff=input.
+%b=1:n and c=1:n are what makes the matrix 3x3 or 4x4, A(b,c) is a matrix
+%made with the inputs 'coeff'.
+
+disp(A)
+
+for c = 1:n
+        cons = input('Enter the constants: ');
+        B(c) = cons;
+        
+end
+%c goes from 1 to n, and that's the amount of constants, B(c) is an array
+%created with the inputs 'cons'
+
+disp(B)
+
+A1 = A;
+A1(1:end,1) = B;
+x1 = det(A1)/det(A);
+disp ('X1 is: '); disp(x1)
+
+%actual cramer's rule to output the solution
+%A1(1:END,1)=B is what replaces first column with B value, as that's how
+%Cramer's rule does.
+%the same happens for x2,x3 and x4.
+
+A2 = A;
+A2(1:end,2) = B;
+x2 = det(A2)/det(A);
+disp ('X2 is: '); disp(x2)
+
+A3 = A;
+A3(1:end,3) = B;
+x3 = det(A3)/det(A);
+disp ('X3 is: '); disp(x3)
+
+if n==4 
+    A4 = A;
+A4(1:end,4) = B;
+x4 = det(A4)/det(A);
+disp ('X4 is: '); disp(x4)
+end
+
+%x4 is in an if loop so if only appears if user whats to find 4 unknowns.
+
+x=input('Press y/Y to continue, or any other key to exit: ','s');
+%asks if user wants to exit or run code again.
+disp (' ');
+end
